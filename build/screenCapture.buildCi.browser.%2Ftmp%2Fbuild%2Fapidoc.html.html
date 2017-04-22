@@ -1,0 +1,1286 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/redux-loop/redux-loop">redux-loop (v2.2.2)</a>
+</h1>
+<h4>Sequence your effects naturally and purely by returning them from your reducers.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-loop">module redux-loop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.combineReducers">
+            function <span class="apidocSignatureSpan">redux-loop.</span>combineReducers
+            <span class="apidocSignatureSpan">(reducerMap)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.getEffect">
+            function <span class="apidocSignatureSpan">redux-loop.</span>getEffect
+            <span class="apidocSignatureSpan">(loop)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.getModel">
+            function <span class="apidocSignatureSpan">redux-loop.</span>getModel
+            <span class="apidocSignatureSpan">(loop)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.install">
+            function <span class="apidocSignatureSpan">redux-loop.</span>install
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.isLoop">
+            function <span class="apidocSignatureSpan">redux-loop.</span>isLoop
+            <span class="apidocSignatureSpan">(array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.liftState">
+            function <span class="apidocSignatureSpan">redux-loop.</span>liftState
+            <span class="apidocSignatureSpan">(state)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.loop">
+            function <span class="apidocSignatureSpan">redux-loop.</span>loop
+            <span class="apidocSignatureSpan">(model, effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-loop.</span>Effects</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-loop.</span>effects</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-loop.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">redux-loop.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-loop.Effects">module redux-loop.Effects</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.Effects.batch">
+            function <span class="apidocSignatureSpan">redux-loop.Effects.</span>batch
+            <span class="apidocSignatureSpan">(effects)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.Effects.call">
+            function <span class="apidocSignatureSpan">redux-loop.Effects.</span>call
+            <span class="apidocSignatureSpan">(factory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.Effects.constant">
+            function <span class="apidocSignatureSpan">redux-loop.Effects.</span>constant
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.Effects.lift">
+            function <span class="apidocSignatureSpan">redux-loop.Effects.</span>lift
+            <span class="apidocSignatureSpan">(effect, factory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.Effects.none">
+            function <span class="apidocSignatureSpan">redux-loop.Effects.</span>none
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.Effects.promise">
+            function <span class="apidocSignatureSpan">redux-loop.Effects.</span>promise
+            <span class="apidocSignatureSpan">(factory)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-loop.combineReducers">module redux-loop.combineReducers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.combineReducers.combineReducers">
+            function <span class="apidocSignatureSpan">redux-loop.</span>combineReducers
+            <span class="apidocSignatureSpan">(reducerMap)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-loop.effects">module redux-loop.effects</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.batch">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>batch
+            <span class="apidocSignatureSpan">(effects)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.call">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>call
+            <span class="apidocSignatureSpan">(factory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.constant">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>constant
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.effectToPromise">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>effectToPromise
+            <span class="apidocSignatureSpan">(effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.isEffect">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>isEffect
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.isNone">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>isNone
+            <span class="apidocSignatureSpan">(object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.lift">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>lift
+            <span class="apidocSignatureSpan">(effect, factory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.none">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>none
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.effects.promise">
+            function <span class="apidocSignatureSpan">redux-loop.effects.</span>promise
+            <span class="apidocSignatureSpan">(factory)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-loop.errors">module redux-loop.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.errors.loopPromiseCaughtError">
+            function <span class="apidocSignatureSpan">redux-loop.errors.</span>loopPromiseCaughtError
+            <span class="apidocSignatureSpan">(originalActionType)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-loop.install">module redux-loop.install</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.install.install">
+            function <span class="apidocSignatureSpan">redux-loop.</span>install
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-loop.loop">module redux-loop.loop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.loop.loop">
+            function <span class="apidocSignatureSpan">redux-loop.</span>loop
+            <span class="apidocSignatureSpan">(model, effect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.loop.getEffect">
+            function <span class="apidocSignatureSpan">redux-loop.loop.</span>getEffect
+            <span class="apidocSignatureSpan">(loop)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.loop.getModel">
+            function <span class="apidocSignatureSpan">redux-loop.loop.</span>getModel
+            <span class="apidocSignatureSpan">(loop)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.loop.isLoop">
+            function <span class="apidocSignatureSpan">redux-loop.loop.</span>isLoop
+            <span class="apidocSignatureSpan">(array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.loop.liftState">
+            function <span class="apidocSignatureSpan">redux-loop.loop.</span>liftState
+            <span class="apidocSignatureSpan">(state)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.redux-loop.utils">module redux-loop.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.utils.flatten">
+            function <span class="apidocSignatureSpan">redux-loop.utils.</span>flatten
+            <span class="apidocSignatureSpan">(array)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.utils.mapValues">
+            function <span class="apidocSignatureSpan">redux-loop.utils.</span>mapValues
+            <span class="apidocSignatureSpan">(object, mapper)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.redux-loop.utils.throwInvariant">
+            function <span class="apidocSignatureSpan">redux-loop.utils.</span>throwInvariant
+            <span class="apidocSignatureSpan">(condition, message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-loop" id="apidoc.module.redux-loop">module redux-loop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.combineReducers" id="apidoc.element.redux-loop.combineReducers">
+        function <span class="apidocSignatureSpan">redux-loop.</span>combineReducers
+        <span class="apidocSignatureSpan">(reducerMap)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function combineReducers(reducerMap) {
+  var rootState = arguments.length &lt;= 1 || arguments[1] === undefined ? {} : arguments[1];
+  var accessor = arguments.length &lt;= 2 || arguments[2] === undefined ? defaultAccessor : arguments[2];
+  var mutator = arguments.length &lt;= 3 || arguments[3] === undefined ? defaultMutator : arguments[3];
+
+  return function finalReducer() {
+    var state = arguments.length &lt;= 0 || arguments[0] === undefined ? rootState : arguments[0];
+    var action = arguments[1];
+
+    var hasChanged = false;
+    var effects = [];
+
+    var model = Object.keys(reducerMap).reduce(function (model, key) {
+      var reducer = reducerMap[key];
+      var previousStateForKey = accessor(state, key);
+      var nextStateForKey = reducer(previousStateForKey, action);
+
+      if ((0, _loop.isLoop)(nextStateForKey)) {
+        effects.push((0, _loop.getEffect)(nextStateForKey));
+        nextStateForKey = (0, _loop.getModel)(nextStateForKey);
+      }
+
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+      return mutator(model, key, nextStateForKey);
+    }, rootState);
+
+    return (0, _loop.loop)(hasChanged ? model : state, optimizeBatch(effects));
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.getEffect" id="apidoc.element.redux-loop.getEffect">
+        function <span class="apidocSignatureSpan">redux-loop.</span>getEffect
+        <span class="apidocSignatureSpan">(loop)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getEffect(loop) {
+  if (!isLoop(loop)) {
+    return null;
+  }
+
+  return loop[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.getModel" id="apidoc.element.redux-loop.getModel">
+        function <span class="apidocSignatureSpan">redux-loop.</span>getModel
+        <span class="apidocSignatureSpan">(loop)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getModel(loop) {
+  if (!isLoop(loop)) {
+    return loop;
+  }
+
+  return loop[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.install" id="apidoc.element.redux-loop.install">
+        function <span class="apidocSignatureSpan">redux-loop.</span>install
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function install() {
+  return function (next) {
+    return function (reducer, initialState, enhancer) {
+      var currentEffect = (0, _effects.none)();
+
+      var _liftState = (0, _loop.liftState)(initialState);
+
+      var _liftState2 = _slicedToArray(_liftState, 2);
+
+      var initialModel = _liftState2[0];
+      var initialEffect = _liftState2[1];
+
+
+      var liftReducer = function liftReducer(reducer) {
+        return function (state, action) {
+          var result = reducer(state, action);
+
+          var _liftState3 = (0, _loop.liftState)(result);
+
+          var _liftState4 = _slicedToArray(_liftState3, 2);
+
+          var model = _liftState4[0];
+          var effect = _liftState4[1];
+
+          if ((0, _effects.isNone)(currentEffect)) {
+            currentEffect = effect;
+          } else {
+            currentEffect = (0, _effects.batch)([currentEffect, effect]);
+          }
+          return model;
+        };
+      };
+
+      var store = next(liftReducer(reducer), initialModel, enhancer);
+
+      var runEffect = function runEffect(originalAction, effect) {
+        return (0, _effects.effectToPromise)(effect).then(function (actions) {
+          return Promise.all(actions.map(dispatch));
+        })['catch'](function (error) {
+          console.error((0, _errors.loopPromiseCaughtError)(originalAction.type));
+          throw error;
+        });
+      };
+
+      var dispatch = function dispatch(action) {
+        store.dispatch(action);
+        var effectToRun = currentEffect;
+        currentEffect = (0, _effects.none)();
+        return runEffect(action, effectToRun);
+      };
+
+      var replaceReducer = function replaceReducer(reducer) {
+        return store.replaceReducer(liftReducer(reducer));
+      };
+
+      runEffect({ type: '@@ReduxLoop/INIT' }, initialEffect);
+
+      return _extends({}, store, {
+        dispatch: dispatch,
+        replaceReducer: replaceReducer
+      });
+    };
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.isLoop" id="apidoc.element.redux-loop.isLoop">
+        function <span class="apidocSignatureSpan">redux-loop.</span>isLoop
+        <span class="apidocSignatureSpan">(array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isLoop(array) {
+  return Array.isArray(array) &amp;&amp; array.length === 2 &amp;&amp; (0, _effects.isEffect)(array[1]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.liftState" id="apidoc.element.redux-loop.liftState">
+        function <span class="apidocSignatureSpan">redux-loop.</span>liftState
+        <span class="apidocSignatureSpan">(state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function liftState(state) {
+  return isLoop(state) ? state : loop(state, (0, _effects.none)());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.loop" id="apidoc.element.redux-loop.loop">
+        function <span class="apidocSignatureSpan">redux-loop.</span>loop
+        <span class="apidocSignatureSpan">(model, effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loop(model, effect) {
+  if (process.env.NODE_ENV === 'development') {
+    (0, _utils.throwInvariant)((0, _effects.isEffect)(effect), 'Given effect is not an effect instance.');
+  }
+
+  return [model, effect];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-loop.Effects" id="apidoc.module.redux-loop.Effects">module redux-loop.Effects</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.Effects.batch" id="apidoc.element.redux-loop.Effects.batch">
+        function <span class="apidocSignatureSpan">redux-loop.Effects.</span>batch
+        <span class="apidocSignatureSpan">(effects)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function batch(effects) {
+  return _defineProperty({
+    effects: effects,
+    type: effectTypes.BATCH
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.Effects.call" id="apidoc.element.redux-loop.Effects.call">
+        function <span class="apidocSignatureSpan">redux-loop.Effects.</span>call
+        <span class="apidocSignatureSpan">(factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function call(factory) {
+  for (var _len2 = arguments.length, args = Array(_len2 &gt; 1 ? _len2 - 1 : 0), _key2 = 1; _key2 &lt; _len2; _key2++) {
+    args[_key2 - 1] = arguments[_key2];
+  }
+
+  return _defineProperty({
+    factory: factory,
+    args: args,
+    type: effectTypes.CALL
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i];
+for (var key in source) { if (Object.prototype.hasOwnProperty.<span class="apidocCodeKeywordSpan">call</span>(source, key)) { target
+[key] = source[key]; } } } return target; };
+
+exports.combineReducers = combineReducers;
+
+var _loop = require('./loop');
+
+var _effects = require('./effects');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.Effects.constant" id="apidoc.element.redux-loop.Effects.constant">
+        function <span class="apidocSignatureSpan">redux-loop.Effects.</span>constant
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function constant(action) {
+  return _defineProperty({
+    action: action,
+    type: effectTypes.CONSTANT
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.Effects.lift" id="apidoc.element.redux-loop.Effects.lift">
+        function <span class="apidocSignatureSpan">redux-loop.Effects.</span>lift
+        <span class="apidocSignatureSpan">(effect, factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lift(effect, factory) {
+  for (var _len3 = arguments.length, args = Array(_len3 &gt; 2 ? _len3 - 2 : 0), _key3 = 2; _key3 &lt; _len3; _key3++) {
+    args[_key3 - 2] = arguments[_key3];
+  }
+
+  return _defineProperty({
+    effect: effect,
+    factory: factory,
+    args: args,
+    type: effectTypes.LIFT
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.Effects.none" id="apidoc.element.redux-loop.Effects.none">
+        function <span class="apidocSignatureSpan">redux-loop.Effects.</span>none
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function none() {
+  return _defineProperty({
+    type: effectTypes.NONE
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.Effects.promise" id="apidoc.element.redux-loop.Effects.promise">
+        function <span class="apidocSignatureSpan">redux-loop.Effects.</span>promise
+        <span class="apidocSignatureSpan">(factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function promise(factory) {
+  for (var _len = arguments.length, args = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+
+  return _defineProperty({
+    factory: factory,
+    args: args,
+    type: effectTypes.PROMISE
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-loop.combineReducers" id="apidoc.module.redux-loop.combineReducers">module redux-loop.combineReducers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.combineReducers.combineReducers" id="apidoc.element.redux-loop.combineReducers.combineReducers">
+        function <span class="apidocSignatureSpan">redux-loop.</span>combineReducers
+        <span class="apidocSignatureSpan">(reducerMap)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function combineReducers(reducerMap) {
+  var rootState = arguments.length &lt;= 1 || arguments[1] === undefined ? {} : arguments[1];
+  var accessor = arguments.length &lt;= 2 || arguments[2] === undefined ? defaultAccessor : arguments[2];
+  var mutator = arguments.length &lt;= 3 || arguments[3] === undefined ? defaultMutator : arguments[3];
+
+  return function finalReducer() {
+    var state = arguments.length &lt;= 0 || arguments[0] === undefined ? rootState : arguments[0];
+    var action = arguments[1];
+
+    var hasChanged = false;
+    var effects = [];
+
+    var model = Object.keys(reducerMap).reduce(function (model, key) {
+      var reducer = reducerMap[key];
+      var previousStateForKey = accessor(state, key);
+      var nextStateForKey = reducer(previousStateForKey, action);
+
+      if ((0, _loop.isLoop)(nextStateForKey)) {
+        effects.push((0, _loop.getEffect)(nextStateForKey));
+        nextStateForKey = (0, _loop.getModel)(nextStateForKey);
+      }
+
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+      return mutator(model, key, nextStateForKey);
+    }, rootState);
+
+    return (0, _loop.loop)(hasChanged ? model : state, optimizeBatch(effects));
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-loop.effects" id="apidoc.module.redux-loop.effects">module redux-loop.effects</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.batch" id="apidoc.element.redux-loop.effects.batch">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>batch
+        <span class="apidocSignatureSpan">(effects)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function batch(effects) {
+  return _defineProperty({
+    effects: effects,
+    type: effectTypes.BATCH
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.call" id="apidoc.element.redux-loop.effects.call">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>call
+        <span class="apidocSignatureSpan">(factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function call(factory) {
+  for (var _len2 = arguments.length, args = Array(_len2 &gt; 1 ? _len2 - 1 : 0), _key2 = 1; _key2 &lt; _len2; _key2++) {
+    args[_key2 - 1] = arguments[_key2];
+  }
+
+  return _defineProperty({
+    factory: factory,
+    args: args,
+    type: effectTypes.CALL
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i &lt; arguments.length; i++) { var source = arguments[i];
+for (var key in source) { if (Object.prototype.hasOwnProperty.<span class="apidocCodeKeywordSpan">call</span>(source, key)) { target
+[key] = source[key]; } } } return target; };
+
+exports.combineReducers = combineReducers;
+
+var _loop = require('./loop');
+
+var _effects = require('./effects');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.constant" id="apidoc.element.redux-loop.effects.constant">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>constant
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function constant(action) {
+  return _defineProperty({
+    action: action,
+    type: effectTypes.CONSTANT
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.effectToPromise" id="apidoc.element.redux-loop.effects.effectToPromise">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>effectToPromise
+        <span class="apidocSignatureSpan">(effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function effectToPromise(effect) {
+  if (process.env.NODE_ENV === 'development') {
+    (0, _utils.throwInvariant)(isEffect(effect), 'Given effect is not an effect instance.');
+  }
+
+  switch (effect.type) {
+    case effectTypes.PROMISE:
+      return effect.factory.apply(effect, _toConsumableArray(effect.args)).then(function (action) {
+        return [action];
+      });
+    case effectTypes.CALL:
+      return Promise.resolve([effect.factory.apply(effect, _toConsumableArray(effect.args))]);
+    case effectTypes.BATCH:
+      return Promise.all(effect.effects.map(effectToPromise)).then(_utils.flatten);
+    case effectTypes.CONSTANT:
+      return Promise.resolve([effect.action]);
+    case effectTypes.NONE:
+      return Promise.resolve([]);
+    case effectTypes.LIFT:
+      return effectToPromise(effect.effect).then(function (actions) {
+        return actions.map(function (action) {
+          return effect.factory.apply(effect, _toConsumableArray(effect.args).concat([action]));
+        });
+      });
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.isEffect" id="apidoc.element.redux-loop.effects.isEffect">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>isEffect
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isEffect(object) {
+  return object ? object[isEffectSymbol] : false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.isNone" id="apidoc.element.redux-loop.effects.isNone">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>isNone
+        <span class="apidocSignatureSpan">(object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isNone(object) {
+  return object ? object.type === effectTypes.NONE : false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.lift" id="apidoc.element.redux-loop.effects.lift">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>lift
+        <span class="apidocSignatureSpan">(effect, factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lift(effect, factory) {
+  for (var _len3 = arguments.length, args = Array(_len3 &gt; 2 ? _len3 - 2 : 0), _key3 = 2; _key3 &lt; _len3; _key3++) {
+    args[_key3 - 2] = arguments[_key3];
+  }
+
+  return _defineProperty({
+    effect: effect,
+    factory: factory,
+    args: args,
+    type: effectTypes.LIFT
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.none" id="apidoc.element.redux-loop.effects.none">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>none
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function none() {
+  return _defineProperty({
+    type: effectTypes.NONE
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.effects.promise" id="apidoc.element.redux-loop.effects.promise">
+        function <span class="apidocSignatureSpan">redux-loop.effects.</span>promise
+        <span class="apidocSignatureSpan">(factory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function promise(factory) {
+  for (var _len = arguments.length, args = Array(_len &gt; 1 ? _len - 1 : 0), _key = 1; _key &lt; _len; _key++) {
+    args[_key - 1] = arguments[_key];
+  }
+
+  return _defineProperty({
+    factory: factory,
+    args: args,
+    type: effectTypes.PROMISE
+  }, isEffectSymbol, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-loop.errors" id="apidoc.module.redux-loop.errors">module redux-loop.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.errors.loopPromiseCaughtError" id="apidoc.element.redux-loop.errors.loopPromiseCaughtError">
+        function <span class="apidocSignatureSpan">redux-loop.errors.</span>loopPromiseCaughtError
+        <span class="apidocSignatureSpan">(originalActionType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loopPromiseCaughtError(originalActionType) {
+  return "\nloop Promise caught when returned from action of type " + originalActionType + ".\nloop Promises must not throw!\n\nDid
+ you forget to do one of the following?\n\n- Call `.catch` on a Promise in a function passed to `Effects.promise`\n\n  const asyncEffect = (val) =&gt; {\n    return api.doStuff(val)\n      .then((stuff) =&gt; Actions.success(stuff))\n      .catch((error) =&gt; Actions.failure(error)); // &lt;-- You have to do this!\n  };\n\n- Return an action from a `.catch` callback\n\n  const asyncEffect = (val) =&gt; {\n    return api.doStuff(val)\n      .then((stuff) =&gt; {\n        return Actions.success(stuff); // &lt;-- Make sure to return here!\n      })\n      .catch((error) =&gt; {\n        return Actions.failure(error): // &lt;-- And return here!\n      });\n  };\n\nDon't see the problem here? Please report the issue at &lt;https://github.com/raisemarketplace/redux-loop/issues/new&gt;\n";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-loop.install" id="apidoc.module.redux-loop.install">module redux-loop.install</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.install.install" id="apidoc.element.redux-loop.install.install">
+        function <span class="apidocSignatureSpan">redux-loop.</span>install
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function install() {
+  return function (next) {
+    return function (reducer, initialState, enhancer) {
+      var currentEffect = (0, _effects.none)();
+
+      var _liftState = (0, _loop.liftState)(initialState);
+
+      var _liftState2 = _slicedToArray(_liftState, 2);
+
+      var initialModel = _liftState2[0];
+      var initialEffect = _liftState2[1];
+
+
+      var liftReducer = function liftReducer(reducer) {
+        return function (state, action) {
+          var result = reducer(state, action);
+
+          var _liftState3 = (0, _loop.liftState)(result);
+
+          var _liftState4 = _slicedToArray(_liftState3, 2);
+
+          var model = _liftState4[0];
+          var effect = _liftState4[1];
+
+          if ((0, _effects.isNone)(currentEffect)) {
+            currentEffect = effect;
+          } else {
+            currentEffect = (0, _effects.batch)([currentEffect, effect]);
+          }
+          return model;
+        };
+      };
+
+      var store = next(liftReducer(reducer), initialModel, enhancer);
+
+      var runEffect = function runEffect(originalAction, effect) {
+        return (0, _effects.effectToPromise)(effect).then(function (actions) {
+          return Promise.all(actions.map(dispatch));
+        })['catch'](function (error) {
+          console.error((0, _errors.loopPromiseCaughtError)(originalAction.type));
+          throw error;
+        });
+      };
+
+      var dispatch = function dispatch(action) {
+        store.dispatch(action);
+        var effectToRun = currentEffect;
+        currentEffect = (0, _effects.none)();
+        return runEffect(action, effectToRun);
+      };
+
+      var replaceReducer = function replaceReducer(reducer) {
+        return store.replaceReducer(liftReducer(reducer));
+      };
+
+      runEffect({ type: '@@ReduxLoop/INIT' }, initialEffect);
+
+      return _extends({}, store, {
+        dispatch: dispatch,
+        replaceReducer: replaceReducer
+      });
+    };
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-loop.loop" id="apidoc.module.redux-loop.loop">module redux-loop.loop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.loop.loop" id="apidoc.element.redux-loop.loop.loop">
+        function <span class="apidocSignatureSpan">redux-loop.</span>loop
+        <span class="apidocSignatureSpan">(model, effect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function loop(model, effect) {
+  if (process.env.NODE_ENV === 'development') {
+    (0, _utils.throwInvariant)((0, _effects.isEffect)(effect), 'Given effect is not an effect instance.');
+  }
+
+  return [model, effect];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.loop.getEffect" id="apidoc.element.redux-loop.loop.getEffect">
+        function <span class="apidocSignatureSpan">redux-loop.loop.</span>getEffect
+        <span class="apidocSignatureSpan">(loop)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getEffect(loop) {
+  if (!isLoop(loop)) {
+    return null;
+  }
+
+  return loop[1];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.loop.getModel" id="apidoc.element.redux-loop.loop.getModel">
+        function <span class="apidocSignatureSpan">redux-loop.loop.</span>getModel
+        <span class="apidocSignatureSpan">(loop)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getModel(loop) {
+  if (!isLoop(loop)) {
+    return loop;
+  }
+
+  return loop[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.loop.isLoop" id="apidoc.element.redux-loop.loop.isLoop">
+        function <span class="apidocSignatureSpan">redux-loop.loop.</span>isLoop
+        <span class="apidocSignatureSpan">(array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isLoop(array) {
+  return Array.isArray(array) &amp;&amp; array.length === 2 &amp;&amp; (0, _effects.isEffect)(array[1]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.loop.liftState" id="apidoc.element.redux-loop.loop.liftState">
+        function <span class="apidocSignatureSpan">redux-loop.loop.</span>liftState
+        <span class="apidocSignatureSpan">(state)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function liftState(state) {
+  return isLoop(state) ? state : loop(state, (0, _effects.none)());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.redux-loop.utils" id="apidoc.module.redux-loop.utils">module redux-loop.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.utils.flatten" id="apidoc.element.redux-loop.utils.flatten">
+        function <span class="apidocSignatureSpan">redux-loop.utils.</span>flatten
+        <span class="apidocSignatureSpan">(array)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function flatten(array) {
+  return concat.apply([], array);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.utils.mapValues" id="apidoc.element.redux-loop.utils.mapValues">
+        function <span class="apidocSignatureSpan">redux-loop.utils.</span>mapValues
+        <span class="apidocSignatureSpan">(object, mapper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function mapValues(object, mapper) {
+  return Object.keys(object).reduce(function (current, key) {
+    current[key] = mapper(object[key], key);
+    return current;
+  }, {});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.redux-loop.utils.throwInvariant" id="apidoc.element.redux-loop.utils.throwInvariant">
+        function <span class="apidocSignatureSpan">redux-loop.utils.</span>throwInvariant
+        <span class="apidocSignatureSpan">(condition, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function throwInvariant(condition, message) {
+  if (!condition) {
+    throw Error(message);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
